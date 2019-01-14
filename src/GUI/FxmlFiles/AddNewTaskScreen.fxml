@@ -1,10 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controllers.AddNewTaskController">
    <children>
-      <Button fx:id="buttonBackAddNewTask" mnemonicParsing="false" onAction="#openBackAddNewTask" text="Back" />
+      <Label text="Add new task">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" prefWidth="80.0" text="Name: " />
+            <TextField fx:id="nameTextField" />
+            <Label fx:id="nameLabel" text="OK" textFill="#00ff0d" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="198.0" prefHeight="50.0" prefWidth="300.0" spacing="10.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" prefWidth="80.0" text="End date: " />
+            <TextField fx:id="endDateTextField" />
+            <Label fx:id="endDateLabel" text="OK" textFill="#00ff0d" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="172.0" prefHeight="50.0" prefWidth="300.0" spacing="10.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefWidth="80.0" text="Status: " />
+            <TextField fx:id="statusTextField" />
+            <Label fx:id="statusLabel" text="OK" textFill="#00ff0d" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="300.0" spacing="10.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" prefWidth="80.0" text="Comment: " />
+            <TextField fx:id="commentTextField" />
+            <Label fx:id="commentLabel" text="OK" textFill="#00ff0d" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <Button fx:id="buttonBackAddNewTask" mnemonicParsing="false" onAction="#openBackAddNewTask" prefHeight="25.0" prefWidth="90.0" text="Back to menu" />
+            <Button fx:id="buttonAddTask" mnemonicParsing="false" prefWidth="90.0" text="Add task" />
+         </children>
+      </HBox>
    </children>
 </VBox>
