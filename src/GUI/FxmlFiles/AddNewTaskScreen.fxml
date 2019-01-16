@@ -45,7 +45,7 @@
       <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="20.0">
          <children>
             <Button fx:id="buttonBackAddNewTask" mnemonicParsing="false" onAction="#openBackAddNewTask" prefHeight="25.0" prefWidth="90.0" text="Back to menu" />
-            <Button fx:id="buttonAddTask" mnemonicParsing="false" prefWidth="90.0" text="Add task" />
+            <Button fx:id="buttonAddTask" mnemonicParsing="false" onAction="#actionAddTask" prefWidth="90.0" text="Add task" />
          </children>
       </HBox>
    </children>
