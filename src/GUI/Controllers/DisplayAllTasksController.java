@@ -1,5 +1,6 @@
 package GUI.Controllers;
 
+import GUI.Allgorithms.Memory;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -16,6 +17,7 @@ public class DisplayAllTasksController {
     @FXML
     private TextArea textAreaDisplayTasks;
 
+    private Memory memory = new Memory();
     private MainController mainController;
     public void openBackDisplayAllTasks(ActionEvent actionEvent) throws IOException {
         mainController.loadMenuScreen();
@@ -24,9 +26,16 @@ public class DisplayAllTasksController {
         this.mainController = mainController;
     }
 
-    public void displayAllTasks(ActionEvent actionEvent) {
+    public void displayAllTasks(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
+        textAreaDisplayTasks.clear();
+        memory.deserialization();
+        System.out.println(memory.getListWithTasks().toString());
+        textAreaDisplayTasks.setText(memory.getListWithTasks().toString());
     }
 
-    public void DeleteAllTasks(ActionEvent actionEvent) {
+    public void DeleteAllTasks(ActionEvent actionEvent) throws IOException {
+        textAreaDisplayTasks.clear();
+        memory.getListWithTasks().clear();
+        memory.serialization(memory.getListWithTasks());
     }
 }

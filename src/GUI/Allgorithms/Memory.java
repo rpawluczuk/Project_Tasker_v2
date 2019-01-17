@@ -18,10 +18,15 @@ public class Memory implements Serializable {
         this.listWithTasks = listWithTasks;
     }
 
-
-    public void serializable(List<Task> temporaryList) throws IOException {
+    public void serialization(List<Task> temporaryList) throws IOException {
         try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("memory.dat"))) {
             outputStream.writeObject(temporaryList);
+        }
+    }
+
+    public void deserialization() throws IOException, ClassNotFoundException {
+        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("memory.dat"))) {
+            listWithTasks = (List<Task>) inputStream.readObject();
         }
     }
 }
