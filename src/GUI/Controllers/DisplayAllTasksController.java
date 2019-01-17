@@ -29,7 +29,6 @@ public class DisplayAllTasksController {
     public void displayAllTasks(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
         textAreaDisplayTasks.clear();
         memory.deserialization();
-        System.out.println(memory.getListWithTasks().toString());
         textAreaDisplayTasks.setText(memory.getListWithTasks().toString());
     }
 

@@ -68,7 +68,6 @@ public class AddNewTaskController {
         statusList.add(new String("Done"));
         statusList.add(new String("In progress"));
         statusList.add(new String("Abandoned"));
-
         statusComboBox.getItems().addAll(statusList);
     }
 
